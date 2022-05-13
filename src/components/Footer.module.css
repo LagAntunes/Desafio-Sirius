@@ -1,0 +1,41 @@
+.rodape {
+    border-top: .7px solid white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    padding: .5em;
+}
+
+.rodape h1 {
+    align-self: center;
+    color: white;
+    text-shadow:1px 1px black;
+}
+
+.rodape h1 span{
+    color: rgb(177, 138, 199);
+    text-shadow:1px 1px rgb(42, 89, 243);
+}
+
+.icones {
+    display: flex;
+    list-style: none;
+    font-size: 1.5em;
+    align-self: center;
+}
+
+.icones li {
+    margin-left: 1em;
+    margin-top: 1em;
+    font-size: 1.5em;
+}
+
+.icones li a {
+    color: white;
+    text-shadow:1px 1px black;
+}
+
+.icones li a:hover {
+    color: rgb(195, 167, 211);
+    text-shadow:1px 1px rgb(42, 89, 243);
+}
