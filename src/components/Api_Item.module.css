@@ -1,0 +1,11 @@
+.titulo {
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 1px 1px black;
+}
+
+.item {
+    color: aqua;
+    font-size: 1.2em;
+    text-shadow: 1px 1px black;
+}

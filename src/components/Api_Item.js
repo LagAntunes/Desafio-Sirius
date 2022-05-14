@@ -6,11 +6,11 @@ function Api_Item(props) {
     return (
         <div>
             <p>
-                {props.titulo}
+                <span className={styles.titulo}>{props.titulo}</span>
 
-                {props.name}
+                {/* {props.name} */}
             
-                {props.item}
+                <span className={styles.item}>{props.item}</span>
             </p>
         </div>
     )

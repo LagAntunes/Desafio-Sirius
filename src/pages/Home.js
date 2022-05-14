@@ -5,6 +5,8 @@ import axios from "axios";
 import Api_Item from "../components/Api_Item"
 
 function Home () {
+    const [valor, setValor] = useState("")
+
     const [usuario, setUsuario] = useState()
   
     const [repositorio, setRepositorio] = useState()
@@ -12,8 +14,8 @@ function Home () {
     const [detalhe, setDetalhe] = useState()
   
     const [mostraDetalhe, setMostraDetalhe] = useState(false)
-    
-    const [valor, setValor] = useState("")
+
+    const [mostraDisplay, setMostraDisplay] = useState(false)
   
   
     function busca() {
@@ -42,11 +44,14 @@ function Home () {
             console.log("informações", res);
             setDetalhe(res.data)
             setMostraDetalhe(true)
-          })
+            setMostraDisplay(true)
+          }) 
     }
   
     return (
-      <div>
+      <div className={styles.container}>
+        <h1>aaaaaaaaaaaaaaaa</h1>
+
         <input type="text" value={valor} onChange={(event) => setValor(event.target.value)}/>
         <button onClick={busca}>
           clica aqui
@@ -54,30 +59,38 @@ function Home () {
   
         
         { usuario !== undefined && repositorio !== undefined ?
-          <div className={styles.row}>
-            <div>
+          <div className={styles.usuarioInformacoes}>
+            <div className={styles.usuario}>
                 <img src={usuario.avatar_url} alt="avatar"/>
                 <Api_Item titulo="Nome do usuário: " item={usuario.name}/>
                 <Api_Item titulo="Login do usuário: " item={usuario.login}/>
+                <Api_Item titulo="Email do usuário: " item={usuario.email}/>
+                <Api_Item titulo="Número de seguidores: " item={usuario.followers}/>
+                <Api_Item titulo="Número de seguidos: " item={usuario.following}/>
             </div>
-  
-            {mostraDetalhe ? 
-              <div>
-               <Api_Item titulo="Descrição do repositório: " item={detalhe.description}/>
-               <button onClick={() => setMostraDetalhe(false)}>Ocultar detalhes</button>
-              </div>
-              :
-              <></>
-            }
   
             {repositorio.map((item) => {
               return (
-                <div key={item.id}>
+                <div key={item.id} className={styles.repositorio} style={mostraDisplay ? {display: "none"} : {display: "flex"}}>
                   <Api_Item titulo="Nome do repositório: " item={item.full_name}/>
                   <button id={item.full_name} onClick={verDetalhes}>Ver detalhes</button>
                 </div>
               )
             })}
+
+            {mostraDetalhe ? 
+              <div className={styles.descricao}>
+               <Api_Item titulo="Descrição do repositório: " item={detalhe.description}/>
+               <Api_Item titulo="Número de estrelas do repositório: " item={detalhe.stargazers_count}/>
+               <Api_Item titulo="Linguagem usada no repositório: " item={detalhe.language}/>
+                <a href={detalhe.html_url}>
+                  <button>Link do repositório</button>
+                </a> <br/>
+               <button onClick={() => {setMostraDetalhe(false); setMostraDisplay(false)}}>Ocultar detalhes</button>
+              </div>
+              :
+              <></> 
+            }
             
           </div> 
           :
