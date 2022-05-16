@@ -41,3 +41,6 @@ Trabalho realizado por Luis Antonio como proposta para concorrer a vaga de desen
 ## Como funciona?
 
 Digite pelo nome do usuário que deseja buscar no campo de busca e visualize suas informações, como: Foto, Nome, Bio, Login, Email, Número de seguidores e seguidos, assim como também todos os repositórios criados por esse usuário.
+
+## Acesse também o projeto através do link abaixo:
+Projeto hospedado no Heroku: https://projeto-sirius.herokuapp.com
