@@ -14,6 +14,7 @@
     font-size: 1.2em;
     color: white;
     text-shadow:1px 1px black;
+    transition: 1.2s;
 }
 
 .list {
@@ -29,9 +30,20 @@
     color: white;
     font-weight: bold;
     text-shadow:-1px 1px black;
+    transition: 1.2s;
 }
 
 .logo:hover, .item:hover {
-    color: rgb(195, 167, 211);
-    text-shadow:1px 1px rgb(42, 89, 243);
+    color: rgb(204, 98, 204);
+    text-shadow:1px 1px black;
+}
+
+@media(min-width: 319px) and (max-width: 425px){
+    .logo {
+        font-size: 1em;
+    }
+
+    .item {
+        font-size: .95em;
+    }
 }

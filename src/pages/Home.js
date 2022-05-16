@@ -50,12 +50,17 @@ function Home () {
   
     return (
       <div className={styles.container}>
-        <h1>aaaaaaaaaaaaaaaa</h1>
+        <h1>Fique por dentro das <span>atualizações</span> do seu usuário favorito</h1>
 
-        <input type="text" value={valor} onChange={(event) => setValor(event.target.value)}/>
-        <button onClick={busca}>
-          clica aqui
-        </button>
+        <h2>Busque por perfis no github e <span>visualize seus repositórios</span>, assim como também as <span>informações pertinentes</span> aos mesmos: </h2>
+
+        <div className={styles.divInputBotao}>
+          <input type="text" value={valor} onChange={(event) => setValor(event.target.value)} placeholder="Digite o Login do usuário aqui..."/>
+
+          <button onClick={busca}>
+            Buscar usuário
+          </button>
+        </div>
   
         
         { usuario !== undefined && repositorio !== undefined ?
@@ -65,6 +70,7 @@ function Home () {
                 <Api_Item titulo="Nome do usuário: " item={usuario.name}/>
                 <Api_Item titulo="Login do usuário: " item={usuario.login}/>
                 <Api_Item titulo="Email do usuário: " item={usuario.email}/>
+                <Api_Item titulo="Bio do usuário: " item={usuario.bio}/>
                 <Api_Item titulo="Número de seguidores: " item={usuario.followers}/>
                 <Api_Item titulo="Número de seguidos: " item={usuario.following}/>
             </div>
@@ -73,25 +79,29 @@ function Home () {
               return (
                 <div key={item.id} className={styles.repositorio} style={mostraDisplay ? {display: "none"} : {display: "flex"}}>
                   <Api_Item titulo="Nome do repositório: " item={item.full_name}/>
-                  <button id={item.full_name} onClick={verDetalhes}>Ver detalhes</button>
+                  <button id={item.full_name} onClick={verDetalhes} className={styles.detalhesBotao}>Ver detalhes</button>
                 </div>
               )
             })}
 
             {mostraDetalhe ? 
-              <div className={styles.descricao}>
+             <div className={styles.descricao}>
+              <p>
+                <Api_Item titulo="Nome do repositório: " item={detalhe.full_name}/>
+              </p>
+
                <Api_Item titulo="Descrição do repositório: " item={detalhe.description}/>
                <Api_Item titulo="Número de estrelas do repositório: " item={detalhe.stargazers_count}/>
                <Api_Item titulo="Linguagem usada no repositório: " item={detalhe.language}/>
                 <a href={detalhe.html_url}>
-                  <button>Link do repositório</button>
+                  <button className={styles.detalhesBotao}>Link do repositório</button>
                 </a> <br/>
-               <button onClick={() => {setMostraDetalhe(false); setMostraDisplay(false)}}>Ocultar detalhes</button>
-              </div>
+               <button className={styles.detalhesBotao} onClick={() => {setMostraDetalhe(false); setMostraDisplay(false)}}>Ocultar detalhes</button>
+             </div>
               :
-              <></> 
+              <>
+              </> 
             }
-            
           </div> 
           :
           <></>

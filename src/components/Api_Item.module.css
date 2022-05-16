@@ -5,7 +5,8 @@
 }
 
 .item {
-    color: aqua;
+    color: rgb(204, 98, 204);
     font-size: 1.2em;
+    font-weight: bold;
     text-shadow: 1px 1px black;
 }

@@ -13,8 +13,8 @@
 }
 
 .rodape h1 span{
-    color: rgb(150, 89, 185);
-    text-shadow:1px 1px rgb(2, 21, 85);
+    color: rgb(204, 98, 204);
+    text-shadow:1px 1px black;
 }
 
 .icones {
@@ -27,15 +27,22 @@
 .icones li {
     margin-left: 1em;
     margin-top: 1em;
+    margin-bottom: 1em;
     font-size: 1.5em;
 }
 
-.icones li a {
+.icones a {
     color: white;
-    text-shadow:1px 1px black;
+    transition: 1.2s;
 }
 
-.icones li a:hover {
-    color: rgb(195, 167, 211);
-    text-shadow:1px 1px rgb(42, 89, 243);
+.icones a:hover {
+    color: rgb(204, 98, 204);
+}
+
+@media(min-width: 319px) and (max-width: 425px){
+    .rodape h1 {
+        font-size: 1.5em;
+        margin-left: 10%;
+    }
 }

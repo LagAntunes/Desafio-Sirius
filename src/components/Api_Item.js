@@ -7,8 +7,6 @@ function Api_Item(props) {
         <div>
             <p>
                 <span className={styles.titulo}>{props.titulo}</span>
-
-                {/* {props.name} */}
             
                 <span className={styles.item}>{props.item}</span>
             </p>

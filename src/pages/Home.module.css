@@ -5,8 +5,66 @@
     height: 100%;
 }
 
+.container h1, h2 {
+    align-self: center;
+    width: 65%;
+    margin-top: 2em;
+    color: white;
+    text-shadow: 1.2px 1.2px black;
+    font-size: 3em;
+}
+
+.container h2 {
+    margin-bottom: 2em;
+    font-size: 2em;
+}
+
+.container h1 span, h2 span {
+    color: rgb(219, 89, 219);
+    text-shadow: 1.2px 1.2px black;
+}
+
+.divInputBotao {
+    align-self: center;
+    margin-top: 1em;
+    margin-bottom: 7em;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+}
+
+.divInputBotao input {
+    width: 50%;
+    margin-left: 12%;
+    margin-right: 2%;
+    padding: 1%;
+    border-radius: 5px;
+    border-color: rgb(153, 26, 153);
+    color: purple;
+    font-size: 1.2em;
+}
+
+.divInputBotao button {
+    width: 20%;
+    padding: 1%;
+    border-radius: 5px;
+    border-color: rgb(153, 26, 153);
+    background-color: rgb(153, 26, 153);
+    color: white;
+    font-size: 1.5vw;
+    height: 45px;
+    transition: 1.2s;
+}
+
+.divInputBotao button:hover {
+    cursor: pointer;
+    border-color: rgb(189, 86, 189);
+    background-color: rgb(189, 86, 189);
+}
+
 .usuarioInformacoes {
     align-self: center;
+    width: 100%;
 }
 
 .usuario, .repositorio, .descricao {
@@ -15,8 +73,18 @@
     margin-top: 5%;
     margin-bottom: 5%;
     padding: 4%;
-    width: 80%;
-    margin-left: 6%;
+    width: 60%;
+    margin-left: 16%;
+}
+
+.descricao h2 {
+    font-size: 3.5vw;
+    width: 100%;
+}
+
+.repositorio {
+    display: flex;
+    flex-direction: column;
 }
 
 .usuario img {
@@ -27,3 +95,63 @@
     border: 2px solid rgb(153, 26, 153);
 }
 
+.detalhesBotao {
+    margin-top: 2em;
+    width: 40%;
+    padding: 1%;
+    border-radius: 5px;
+    border-color: rgb(153, 26, 153);
+    background-color: rgb(153, 26, 153);
+    color: white;
+    font-size: 1.5vw;
+    height: 45px;
+    transition: 1.2s;
+}
+
+.detalhesBotao:hover {
+    cursor: pointer;
+    border-color: rgb(189, 86, 189);
+    background-color: rgb(189, 86, 189);
+}
+
+
+@media(min-width: 319px) and (max-width: 425px){
+    .usuario, .repositorio, .descricao {
+        width: 70%;
+        margin-left: 11%;
+        font-size: .8em;
+    }
+
+    .container h1 {
+     font-size: 2.5em;
+    }
+
+    .container h2 {
+        font-size: 1.5em;
+    }
+
+    .divInputBotao {
+        width: 90%;
+    }
+
+    .divInputBotao input {
+        margin-left: 3%;
+        height: 30px;
+        width: 50%;
+        font-size: 1em;
+    }
+
+    .divInputBotao button {
+        width: 40%;
+        font-size: 1em;
+    }
+
+    .detalhesBotao {
+        width: 80%;
+        font-size: 1em;
+    }
+
+    .descricao h2 {
+        font-size: .8em;
+    }
+  }
